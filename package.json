@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "lint": "eslint . --ext .js --ignore-pattern node_modules/"
+    "lint": "eslint . --ext .js --ignore-pattern node_modules/",
+    "lint:manifest": "web-ext lint",
+    "start": "TMPDIR=~/tmp-dir/ web-ext run"
   },
   "repository": {
     "type": "git",
