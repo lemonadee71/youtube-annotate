@@ -2,10 +2,9 @@
   "name": "Youtube Annotate",
   "version": "0.0.0",
   "description": "Add notes to a YouTube video",
-  "permissions": ["storage", "tabs"],
-  "host_permissions": ["https://*.youtube.com/*"],
+  "permissions": ["storage", "tabs", "https://*.youtube.com/*"],
   "background": {
-    "service_worker": "background.js"
+    "scripts": ["background.js"]
   },
   "content_scripts": [
     {
@@ -13,14 +12,9 @@
       "js": ["inject.js"]
     }
   ],
-  "action": {
-    "default_icon": {
-      "16": "assets/icon.png",
-      "24": "assets/icon.png",
-      "32": "assets/icon.png"
-    },
+  "browser_action": {
     "default_title": "Youtube Annotate",
     "default_popup": "popup.html"
   },
-  "manifest_version": 3
+  "manifest_version": 2
 }
