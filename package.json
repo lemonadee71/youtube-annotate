@@ -7,7 +7,8 @@
     "test": "jest",
     "lint": "eslint . --ext .js --ignore-pattern node_modules/",
     "lint:manifest": "web-ext lint",
-    "start": "TMPDIR=~/tmp-dir/ web-ext run"
+    "start": "TMPDIR=~/tmp-dir/ web-ext run",
+    "start:chrome": "TMPDIR=~/tmp-dir/ web-ext run -t chromium"
   },
   "repository": {
     "type": "git",
