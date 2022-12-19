@@ -7,8 +7,11 @@
     "test": "jest",
     "lint": "eslint . --ext .js --ignore-pattern node_modules/",
     "lint:manifest": "web-ext lint",
-    "start": "TMPDIR=~/tmp-dir/ web-ext run",
-    "start:chrome": "TMPDIR=~/tmp-dir/ web-ext run -t chromium"
+    "start": "TMPDIR=~/tmp-dir/ web-ext run --source-dir=dist --devtools --start-url www.youtube.com",
+    "start:chrome": "npm start -t chromium",
+    "build": "vite build",
+    "watch": "vite build --watch",
+    "dev": "concurrently --kill-others -c green,cyan -n web-ext,vite \"npm start\" \"npm run watch\""
   },
   "repository": {
     "type": "git",
@@ -22,12 +25,14 @@
   "homepage": "https://github.com/lemonadee71/youtube-annotate#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.20.2",
+    "@samrum/vite-plugin-web-extension": "^2.2.0",
     "eslint": "^8.30.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",
     "jest": "^29.3.1",
-    "prettier": "^2.8.1"
+    "prettier": "^2.8.1",
+    "vite": "^4.0.2"
   }
 }
